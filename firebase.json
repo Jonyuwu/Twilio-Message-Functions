@@ -15,10 +15,10 @@
   ],
   "emulators": {
     "functions": {
-      "port": 5001
+      "port": 5000
     },
     "firestore": {
-      "port": 8083
+      "port": 8080
     },
     "database": {
       "port": 9000

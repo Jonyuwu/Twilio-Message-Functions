@@ -30,7 +30,7 @@ const client = twilio(twilioConfig.accountSid, twilioConfig.authToken);
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
 
-export const newalert = onValueWritten(eventOpts, (event) => {
+export const fnOnValueWritten = onValueWritten(eventOpts, (event) => {
   //:::::::::::::::::::::
   // Event validation
   //:::::::::::::::::::::

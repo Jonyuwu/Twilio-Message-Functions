@@ -57,10 +57,24 @@ export const messageBuilder = (opts: MessageBuilderOptions): Message => {
   const message = {
     to: opts.to,
     from: twilioConfig.phoneNumber,
-    body: `${opts.name} needs your help. He has used SpotMe to request help. Open a map with the next data: lat: ${opts.location.lat} and lng: ${opts.location.lng}`,
+    body: `${
+      opts.name
+    } needs your help. He has used SpotMe to request help. Open a map with the next data: lat: ${
+      opts.location.lat
+    } and lng: ${
+      opts.location.lng
+    }. Or open this link to view it in Google Maps: ${buildMapsUrl(
+      opts.location
+    )}`,
   };
 
   logger.log(message);
 
   return message;
+};
+
+export const buildMapsUrl = (location: MessageLocation): string => {
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
+  logger.log(mapUrl);
+  return mapUrl;
 };
